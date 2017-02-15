@@ -4,11 +4,13 @@
 
 }
 
-h1 {
-  margin: 0;
-  text-align: center;
-  font-size: 80px;
+.titleimg{
+  width: 20%;
+  height: 20%;
+  margin: 15px 10px 10px 350px;
+  align: center;
 }
+
 h2 {
   margin: 0;
   text-align: center;
@@ -29,7 +31,10 @@ h2 {
   width: 110px;
   height: 110px;
   box-sizing: border-box;
+}
 
+body {
+  background-color: #b0e4f4;
 }
 
 .player-1 {

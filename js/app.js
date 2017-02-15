@@ -4,9 +4,15 @@ var newGame;
 $(document).ready(function(board) {
 
 newGame = new ChutesnLadders();
-var diceNumber = rollDice();
-renderBoard();
 
+
+
+$("button").click(function(){
+  var diceNumber = rollDice();
+  console.log("number is" + diceNumber)
+  newGame.movespot(diceNumber);
+});
+renderBoard();
 });
 
 function renderBoard () {
