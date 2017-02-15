@@ -6,11 +6,8 @@ $(document).ready(function(board) {
 newGame = new ChutesnLadders();
 var diceNumber = rollDice();
 renderBoard();
-newGame.movespot(diceNumber);
 
 });
-
-
 
 function renderBoard () {
   $('.gameBoard').empty();
@@ -38,7 +35,7 @@ function renderBoard () {
 
 function rollDice() {
 
-   return Math.floor(Math.random() * 4) + 1;
+   return Math.floor(Math.random() * 6) + 1;
 }
 
 

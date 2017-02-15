@@ -6,8 +6,11 @@ function ChutesnLadders(){
     [null, null, null, null, null],
     [null, null, null, null, null],
     [null, null, null, null, null],
-    [null, null, null, null, 1],
+    [null, null, 1, null, null],
   ];
+
+
+
 
   this.player1="1";
   this.player2="2";
@@ -15,25 +18,49 @@ function ChutesnLadders(){
 }
 
 ChutesnLadders.prototype.movespot = function (randomN) {
-  console.log("hello world " + randomN);
 
    var board = this.board;
-
+   var stop = 0;
    this.board.forEach(function (row, rowIndex) {
 
      row.forEach(function (cell, colIndex) {
 
      if (cell === 1) {
-       if (colIndex + randomN > 4){
-         board[rowIndex][colIndex] = null;
-         board<YOU CAN DO IT>
+
+       console.log("current coords are " + rowIndex + " " + colIndex);
+       if (rowIndex === 4 || rowIndex === 2 || rowIndex === 0) {
+         if (colIndex - randomN < 0){
+           console.log("triggered");
+           board[rowIndex][colIndex] = null;
+           console.log([rowIndex + 1]+ " " + [colIndex]);
+           board[rowIndex - 1][colIndex] = 1;
+         }
+
+         else {
+       board[rowIndex][colIndex] = null;
+       board[rowIndex][colIndex - randomN] = 1;}
+
+     }
+      if (rowIndex === 3 || rowIndex === 1){
+        if (stop === 0){
+        if (colIndex + randomN > 4){
+          console.log("odd future");
+        board[rowIndex][colIndex] = null;
+        board[rowIndex - 1][colIndex] = 1;
+
+
+      }
+        else {
+          console.log("why");
+      board[rowIndex][colIndex] = null;
+      board[rowIndex][colIndex + randomN] = 1;
+      stop = 1;
+    }
+  }
+     }
+
        }
 
-       else {
-     board[rowIndex][colIndex] = null;
-     board[rowIndex][colIndex - randomN] = 1;}
-
-    }
        });
        });
        renderBoard();
