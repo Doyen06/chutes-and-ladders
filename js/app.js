@@ -5,14 +5,16 @@ $(document).ready(function(board) {
 
 newGame = new ChutesnLadders();
 
-
+renderBoard();
 
 $("button").click(function(){
   var diceNumber = rollDice();
-  console.log("number is" + diceNumber)
+  alert("You rolled " + diceNumber);
+  console.log("number is" + diceNumber);
   newGame.movespot(diceNumber);
+  renderBoard();
 });
-renderBoard();
+
 });
 
 function renderBoard () {
@@ -41,8 +43,14 @@ function renderBoard () {
 
 function rollDice() {
 
-   return Math.floor(Math.random() * 6) + 1;
+   return Math.floor(Math.random() * 4) + 1;
 }
 
-
-//$(".dice").onclick(function());
+function loadSounds () {
+  ion.sound({
+    sounds: [ { name: 'snap' }, { name: 'tap' }, { name: 'beer_can_opening' }, ],
+    path: 'lib/ion-sound/sounds/',
+    preload: true,
+    volume: 1.0,
+  });
+}
