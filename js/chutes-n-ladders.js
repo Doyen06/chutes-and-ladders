@@ -73,4 +73,6 @@ ChutesnLadders.prototype.movespot = function (randomN) {
 
      }
    );
-  }
+}
+);
+};
