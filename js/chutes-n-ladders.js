@@ -113,6 +113,7 @@ console.log(position);
      if (position === null || position===4 || position===0){
        return false;
      } else if (position=== 3){
+       alert("Cool, a ladder!")
        return true;
      }
 
@@ -141,7 +142,9 @@ console.log(position);
     if(position ===null){
       return false;
     } else if (position ===4){
+      alert("Oh no, a chute!");
       return true;
+
     }
 
 
