@@ -1,13 +1,21 @@
-.gameBoard {
-  margin: 0 auto;
-  width: 550px;
+.scoreboard {
+  float: right;
+  margin-bottom: 500px;
+  margin-right: 500px;
 
 }
 
+.gameBoard {
+  margin: 0 auto;
+  width: 750px;
+  align: center;
+}
+
 .titleimg{
+  border-radius: 20px;
   width: 20%;
   height: 20%;
-  margin: 15px 10px 10px 560px;
+  margin: 0 auto;
   align: center;
 }
 
@@ -26,11 +34,12 @@ h2 {
 
 .box {
   float: left;
-  border: 1px solid black;
+  border: 20px solid black;
   padding: 10px;
-  width: 110px;
-  height: 110px;
+  width: 150px;
+  height: 150px;
   box-sizing: border-box;
+  border-radius: 20px;
 }
 
 body {
@@ -39,13 +48,13 @@ body {
 
 .player-1 {
   float: left;
-  border: 1px solid white;
+  border: 20px solid black;
   padding: 10px;
-  width: 110px;
-  height: 110px;
+  width: 150px;
+  height: 150px;
   box-sizing: border-box;
-  background-color: green;
-}
+  border-radius: 20px;
+  background: gold;
 
 .player-2 {
   float: left;
