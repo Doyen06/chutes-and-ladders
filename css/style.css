@@ -11,6 +11,25 @@
   align: center;
 }
 
+.ladder{  float: left;
+  border: 20px solid black;
+  padding: 10px;
+  width: 150px;
+  height: 150px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  background-color: green;
+}
+
+.chute{  float: left;
+  border: 20px solid black;
+  padding: 10px;
+  width: 150px;
+  height: 150px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  background-color: red;
+}
 .titleimg{
   border-radius: 20px;
   width: 20%;

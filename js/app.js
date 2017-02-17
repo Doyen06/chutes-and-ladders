@@ -19,7 +19,7 @@ $("button").click(function(){
 
 function renderBoard () {
   $('.gameBoard').empty();
-  console.log("Board in app.js", newGame.board)
+  console.log("Board in app.js", newGame.board);
   newGame.board.forEach(function(row) {
     row.forEach(function (square) {
 
@@ -30,7 +30,12 @@ function renderBoard () {
         playerPosition = 'player-1';
 
           // empty slot
+      } if (square === 4) {
+        playerPosition ="chute";
       }
+        if (square ===3) {
+          playerPosition = "ladder";
+        }
       var squareInfo = "<div class= " + playerPosition + "></div>";
       $('.gameBoard').append(squareInfo);
     });
