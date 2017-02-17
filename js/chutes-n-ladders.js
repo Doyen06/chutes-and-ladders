@@ -9,6 +9,7 @@ function ChutesnLadders(){
     [null, 3,    null, null, 1],
   ];
 
+
   this.player1="1";
   this.player2="2";
 
@@ -20,6 +21,8 @@ ChutesnLadders.prototype.movespot = function(randomN) {
   var stop = 0;
   var isThereALadder;
   var isThereAChute;
+  var winner = false;
+
   this.board.forEach(function(row, rowIndex) {
 
     row.forEach(function(cell, colIndex) {
@@ -33,7 +36,7 @@ ChutesnLadders.prototype.movespot = function(randomN) {
 
           if (colIndex - randomN < 0) {
             if (rowIndex===0){
-              alert("Nah buddy, try again!");
+              alert("Try again!");
                 return;
             }
             if (colIndex === 0) {
@@ -76,9 +79,19 @@ ChutesnLadders.prototype.movespot = function(randomN) {
                   if (isThereAChute===false) {
                     if (randomN <= colIndex && board[rowIndex][colIndex - randomN] === 0){
                       alert("You won!");
+
+                      $("#player1score").append("<h1> Player Score:" + player1score + "</h1>");
+                      player1score = 0;
+                      board[rowIndex][colIndex] = null;
+                      board[0][0]=0;
+                      board[4][4]=1;
+                      renderBoard();
+                    } else {
+                      board[rowIndex][colIndex] = null;
+                      board[rowIndex][colIndex - randomN]=1;
                     }
-                    board[rowIndex][colIndex] = null;
-                    board[rowIndex][colIndex - randomN]=1;
+
+
                   } else {
                     board[rowIndex][colIndex] = null;
                     board[rowIndex+1][colIndex - randomN]=1;

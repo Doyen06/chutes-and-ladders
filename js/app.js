@@ -1,6 +1,6 @@
 
 var newGame;
-
+var player1score = 0;
 $(document).ready(function(board) {
 
 newGame = new ChutesnLadders();
@@ -19,7 +19,7 @@ $("button").click(function(){
 
 function renderBoard () {
   $('.gameBoard').empty();
-
+  console.log("Board in app.js", newGame.board)
   newGame.board.forEach(function(row) {
     row.forEach(function (square) {
 
@@ -28,10 +28,6 @@ function renderBoard () {
         //player 1 piece
       if (square === 1) {
         playerPosition = 'player-1';
-
-        //player 2 piece
-      } else if (square === 2) {
-        playerPosition = 'player-2';
 
           // empty slot
       }
@@ -42,15 +38,15 @@ function renderBoard () {
   }
 
 function rollDice() {
-
+  player1score += 1;
    return Math.floor(Math.random() * 4) + 1;
 }
 
-function loadSounds () {
-  ion.sound({
-    sounds: [ { name: 'snap' }, { name: 'tap' }, { name: 'beer_can_opening' }, ],
-    path: 'lib/ion-sound/sounds/',
-    preload: true,
-    volume: 1.0,
-  });
-}
+// function loadSounds () {
+//   ion.sound({
+//     sounds: [ { name: 'snap' }, { name: 'tap' }, { name: 'beer_can_opening' }, ],
+//     path: 'lib/ion-sound/sounds/',
+//     preload: true,
+//     volume: 1.0,
+//   });
+// }
